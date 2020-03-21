@@ -30,9 +30,22 @@ final class cracking_swiftTests: XCTestCase {
         XCTAssertEqual(x5, 4)
     }
 
+    func testMyHashSet() {
+        let hashSet = MyHashSet();
+        hashSet.add(1)        
+        hashSet.add(2)         
+        XCTAssertTrue(hashSet.contains(1))
+        XCTAssertFalse(hashSet.contains(3))
+        hashSet.add(2)          
+        XCTAssertTrue(hashSet.contains(2))
+        hashSet.remove(2)       
+        XCTAssertFalse(hashSet.contains(2))
+    }
+
     static var allTests = [
         ("testLengthOfLongestSubstring", testLengthOfLongestSubstring),
         ("testReverseBetween", testReverseBetween),
-        ("testLRUCache", testLRUCache)
+        ("testLRUCache", testLRUCache),
+        ("testMyHashSet", testMyHashSet)
     ]
 }
