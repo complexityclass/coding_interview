@@ -1,4 +1,4 @@
-class MyHashSet {
+class MyIntHashSet {
     private var container: [[Int]]
     private let bucketSize = 100
 

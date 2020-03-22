@@ -31,7 +31,7 @@ final class cracking_swiftTests: XCTestCase {
     }
 
     func testMyHashSet() {
-        let hashSet = MyHashSet();
+        let hashSet = MyIntHashSet()
         hashSet.add(1)        
         hashSet.add(2)         
         XCTAssertTrue(hashSet.contains(1))
@@ -42,10 +42,24 @@ final class cracking_swiftTests: XCTestCase {
         XCTAssertFalse(hashSet.contains(2))
     }
 
+    func testMyHashMap() {
+        let hashMap = MyHashMap()
+        hashMap.put(1, 1)         
+        hashMap.put(2, 2)         
+        XCTAssertEqual(hashMap.get(1), 1)           // returns 1
+        XCTAssertEqual(hashMap.get(3), -1)            // returns -1 (not found)
+        hashMap.put(2, 1)          // update the existing value
+        XCTAssertEqual(hashMap.get(2), 1)            // returns 1 
+
+        hashMap.remove(2)         // remove the mapping for 2
+        XCTAssertEqual(hashMap.get(2), -1)           // returns -1 (not found) 
+    }
+
     static var allTests = [
         ("testLengthOfLongestSubstring", testLengthOfLongestSubstring),
         ("testReverseBetween", testReverseBetween),
         ("testLRUCache", testLRUCache),
-        ("testMyHashSet", testMyHashSet)
+        ("testMyHashSet", testMyHashSet),
+        ("testMyHashMap", testMyHashMap)
     ]
 }
