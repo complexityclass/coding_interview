@@ -11,7 +11,7 @@ final class cracking_swiftTests: XCTestCase {
         let res = reverseBetween(list, 2, 4)!.toArray()
         XCTAssertEqual(res, listOf(1,4,3,2,5)!.toArray())
     }
-
+    
     func testLRUCache() {
         let cache = LRUCache(2)
         cache.put(1, 1)
@@ -55,11 +55,18 @@ final class cracking_swiftTests: XCTestCase {
         XCTAssertEqual(hashMap.get(2), -1)           // returns -1 (not found) 
     }
 
+    func testAtoi() {
+        let str = "4193 with words"
+        let res = myAtoi(str)
+        XCTAssertEqual(res, 4193)
+    }
+
     static var allTests = [
         ("testLengthOfLongestSubstring", testLengthOfLongestSubstring),
         ("testReverseBetween", testReverseBetween),
         ("testLRUCache", testLRUCache),
         ("testMyHashSet", testMyHashSet),
-        ("testMyHashMap", testMyHashMap)
+        ("testMyHashMap", testMyHashMap),
+        ("testAtoi", testAtoi)
     ]
 }
