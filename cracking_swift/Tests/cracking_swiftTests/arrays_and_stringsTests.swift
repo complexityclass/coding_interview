@@ -16,7 +16,15 @@ final class ArraysAndStringsTests: XCTestCase {
         XCTAssertFalse(backspaceCompare(s5,s6))
     }
 
+    func testLCS() {
+        let solution = LCSSolution()
+        let str1 = "AGGTAB"
+        let str2 = "GXTXAYB"
+        XCTAssertEqual(solution.longestCommonSubsequence(str1, str2), 4)
+    }
+
     static var allTests = [
-        ("testBackspaceCompare", testBackspaceCompare)
+        ("testBackspaceCompare", testBackspaceCompare),
+        ("testLCS", testLCS)
     ]
 }
